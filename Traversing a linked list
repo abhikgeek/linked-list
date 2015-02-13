@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+//traversal linked list
+struct Node
+{
+	int data;
+	struct Node* next;
+};
+struct Node* head=NULL;
+int main()
+{
+	struct Node* temp=(struct Node*)malloc(sizeof(struct Node));
+	struct Node* temp1=(struct Node*)malloc(sizeof(struct Node));
+	struct Node* temp2=(struct Node*)malloc(sizeof(struct Node));
+	struct Node* temp3=(struct Node*)malloc(sizeof(struct Node));
+	(*temp).data=10;
+	(*temp).next=temp1;
+	head=temp;
+	
+	(*temp1).data=20;
+	(*temp1).next=temp2;
+	 
+	(*temp2).data=30;
+	(*temp2).next=temp3;
+	 
+	(*temp3).data=40;
+	(*temp3).next=NULL;
+	struct Node* current=head;
+	while(current=NULL)
+	{
+		printf("%d\t",((*current).data));
+		current=(*current).next;
+		
+	}
+	return 0;
+}
