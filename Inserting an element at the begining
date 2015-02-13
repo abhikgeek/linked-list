@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+//linked list insertion at the begining
+//defining a node
+struct Node
+{
+
+    int data;
+    struct Node* next;//ponter fieled which will hold the address of next node
+};
+struct Node* head=NULL;//this is the only thing that we maintain for a linked list. it holds the address of first node and
+//whenever needed we only pass this to anu function
+void Insert(int n)
+{
+    struct Node* temp=(struct Node*)malloc(sizeof(struct Node));
+    temp->data=n;
+    temp->next=head;
+    head=temp;
+}
+void Print()
+{
+    struct Node* current;
+    current=head;
+    printf("The List is:");
+    while(current!=NULL)
+    {
+        printf("%d\t",current->data);
+        current=current->next;
+    }
+    printf("\n");
+}
+int main()
+{
+    int n,x,i;
+    printf("enter how many nodes u want to create\n");
+    scanf("%d",&x);
+    for(i=0;i<x;i++)
+    {
+        printf("enter the element that you want to insert in the node\n");
+        scanf("%d",&n);
+        Insert(n);
+        Print();
+    }
+
+
+    return 0;
+}
